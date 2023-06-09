@@ -9,7 +9,6 @@ import { getSession, requireUserId, sessionStorage } from "~/session.server";
 export const action = async ({ params, request }: ActionArgs) => {
   const userId = await requireUserId(request);
   const formData = await request.formData();
-  const searchParams = new URL(request.url);
   const subject = formData.get("subject");
   const message = formData.get("message");
   const confirm = formData.get("confirm");
